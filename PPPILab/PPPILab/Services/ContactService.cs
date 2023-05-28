@@ -30,13 +30,13 @@ namespace PPPILab.Models
          
         public async Task<List<Contact>> GetAllContactsAsync()
         {
-            await Task.Delay(100); // Simulating async operation
+          
             return _contacts.ToList();
         }
 
         public async Task<Contact> CreateContactAsync(Contact contact)
         {
-            await Task.Delay(100); // Simulating async operation
+          
             contact.Id = _contacts.Count + 1;
             _contacts.Add(contact);
             return contact;
@@ -44,19 +44,19 @@ namespace PPPILab.Models
 
         public async Task UpdateContactAsync(int id, Contact updatedContact)
         {
-            await Task.Delay(100); // Simulating async operation
+          
             var existingContact = _contacts.FirstOrDefault(c => c.Id == id);
             if (existingContact != null)
             {
                 existingContact.Name = updatedContact.Name;
                 existingContact.Email = updatedContact.Email;
-                // Update other properties as needed
+            
             }
         }
 
         public async Task DeleteContactAsync(int id)
         {
-            await Task.Delay(100); // Simulating async operation
+          
             var contact = _contacts.FirstOrDefault(c => c.Id == id);
             if (contact != null)
                 _contacts.Remove(contact);
@@ -64,7 +64,6 @@ namespace PPPILab.Models
         public async Task<Contact> GetContactByIdAsync(int id)
         {
             await Task.Delay(100);
-            // Implementation to get a contact by ID from the repository
             return _contacts.FirstOrDefault(c => c.Id == id);
         }
     }

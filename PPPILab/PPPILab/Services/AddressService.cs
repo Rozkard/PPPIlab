@@ -26,13 +26,13 @@ namespace PPPILab.Models
 
         public async Task<List<Address>> GetAllAddressesAsync()
         {
-            await Task.Delay(100); // Simulating async operation
+          
             return _addresses.ToList();
         }
 
         public async Task<Address> CreateAddressAsync(Address address)
         {
-            await Task.Delay(100); // Simulating async operation
+          
             address.Id = _addresses.Count + 1;
             _addresses.Add(address);
             return address;
@@ -40,19 +40,19 @@ namespace PPPILab.Models
 
         public async Task UpdateAddressAsync(int id, Address updatedAddress)
         {
-            await Task.Delay(100); // Simulating async operation
+          
             var existingAddress = _addresses.FirstOrDefault(a => a.Id == id);
             if (existingAddress != null)
             {
                 existingAddress.Street = updatedAddress.Street;
                 existingAddress.City = updatedAddress.City;
-                // Update other properties as needed
+             
             }
         }
 
         public async Task DeleteAddressAsync(int id)
         {
-            await Task.Delay(100); // Simulating async operation
+          
             var address = _addresses.FirstOrDefault(a => a.Id == id);
             if (address != null)
                 _addresses.Remove(address);

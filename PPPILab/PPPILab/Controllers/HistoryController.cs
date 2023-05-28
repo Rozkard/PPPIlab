@@ -17,7 +17,7 @@ namespace PPPILab.Services
             _historyService = historyService;
         }
 
-        // GET api/history
+    
         [HttpGet]
         public async Task<ActionResult<List<HistoryData>>> GetAllHistoryData()
         {
@@ -25,16 +25,16 @@ namespace PPPILab.Services
             return Ok(historyData);
         }
 
-        // POST api/history
+     
         [HttpPost]
         public async Task<ActionResult<HistoryData>> CreateHistoryData(HistoryData historyData)
         {
             var createdHistoryData = await _historyService.CreateHistoryDataAsync(historyData);
             return Ok(createdHistoryData);
-            //return CreatedAtAction(nameof(GetHistoryDataById), new { id = createdHistoryData.Id }, createdHistoryData);
+          
         }
 
-        // PUT api/history/{id}
+     
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateHistoryData(int id, HistoryData historyData)
         {
@@ -42,7 +42,7 @@ namespace PPPILab.Services
             return NoContent();
         }
 
-        // DELETE api/history/{id}
+      
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteHistoryData(int id)
         {

@@ -17,7 +17,7 @@ namespace PPPILab.Services
             _contactService = contactService;
         }
 
-        // GET api/contacts
+     
         [HttpGet]
         public async Task<ActionResult<List<Contact>>> GetAllContacts()
         {
@@ -25,16 +25,16 @@ namespace PPPILab.Services
             return Ok(contacts);
         }
 
-        // POST api/contacts
+       
         [HttpPost]
         public async Task<ActionResult<Contact>> CreateContact(Contact contact)
         {
             var createdContact = await _contactService.CreateContactAsync(contact);
-            //return Ok(createdContact);
+  
             return CreatedAtAction(nameof(GetContactById), new { id = createdContact.Id }, createdContact);
         }
 
-        // GET api/contacts/{id}
+       
         [HttpGet("{id}")]
         public async Task<ActionResult<Contact>> GetContactById(int id)
         {
@@ -46,7 +46,7 @@ namespace PPPILab.Services
             return Ok(contact);
         }
 
-        // PUT api/contacts/{id}
+      
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateContact(int id, Contact contact)
         {
@@ -59,7 +59,7 @@ namespace PPPILab.Services
             return NoContent();
         }
 
-        // DELETE api/contacts/{id}
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteContact(int id)
         {

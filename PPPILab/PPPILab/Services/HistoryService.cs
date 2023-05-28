@@ -22,13 +22,13 @@ namespace PPPILab.Models
 
         public async Task<List<HistoryData>> GetAllHistoryDataAsync()
         {
-            await Task.Delay(100); // Simulating async operation
+          
             return _historyDataList.ToList();
         }
 
         public async Task<HistoryData> CreateHistoryDataAsync(HistoryData historyData)
         {
-            await Task.Delay(100); // Simulating async operation
+          
             historyData.Id = _historyDataList.Count + 1;
             _historyDataList.Add(historyData);
             return historyData;
@@ -36,19 +36,19 @@ namespace PPPILab.Models
 
         public async Task UpdateHistoryDataAsync(int id, HistoryData updatedHistoryData)
         {
-            await Task.Delay(100); // Simulating async operation
+          
             var existingHistoryData = _historyDataList.FirstOrDefault(h => h.Id == id);
             if (existingHistoryData != null)
             {
                 existingHistoryData.Title = updatedHistoryData.Title;
                 existingHistoryData.Description = updatedHistoryData.Description;
-                // Update other properties as needed
+               
             }
         }
 
         public async Task DeleteHistoryDataAsync(int id)
         {
-            await Task.Delay(100); // Simulating async operation
+          
             var historyData = _historyDataList.FirstOrDefault(h => h.Id == id);
             if (historyData != null)
                 _historyDataList.Remove(historyData);

@@ -17,7 +17,7 @@ namespace PPPILab.Services
             _addressService = addressService;
         }
 
-        // GET api/addresses
+       
         [HttpGet]
         public async Task<ActionResult<List<Address>>> GetAllAddresses()
         {
@@ -25,16 +25,16 @@ namespace PPPILab.Services
             return Ok(addresses);
         }
 
-        // POST api/addresses
+     
         [HttpPost]
         public async Task<ActionResult<Address>> CreateAddress(Address address)
         {
             var createdAddress = await _addressService.CreateAddressAsync(address);
-            //return CreatedAtAction(nameof(GetAddressById), new { id = createdAddress.Id }, createdAddress);
+         
             return Ok(createdAddress);
         }
 
-        // PUT api/addresses/{id}
+       
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAddress(int id, Address address)
         {
@@ -42,7 +42,7 @@ namespace PPPILab.Services
             return NoContent();
         }
 
-        // DELETE api/addresses/{id}
+     
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAddress(int id)
         {
